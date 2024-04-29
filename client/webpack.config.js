@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const WebpackPwaManifest = require("webpack-pwa-manifest");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const path = require("path");
 const { InjectManifest } = require("workbox-webpack-plugin");
 
@@ -21,7 +22,7 @@ module.exports = () => {
 			}),
 			new MiniCssExtractPlugin(),
 			new InjectManifest({
-				swSrc: "./src/sw.js",
+				swSrc: "./src-sw.js",
 				swDest: "service-worker.js",
 			}),
 			new WebpackPwaManifest({
@@ -29,20 +30,10 @@ module.exports = () => {
 				short_name: "PWATextEditor",
 				description: "A PWA text editor",
 				background_color: "#ffffff",
-				crossorigin: "null",
 				icons: [
 					{
-						src: path.resolve("src/assets/icon.png"),
+						src: path.resolve("src/images/logo.png"),
 						sizes: [96, 128, 192, 256, 384, 512],
-					},
-					{
-						src: path.resolve("src/assets/large-icon.png"),
-						size: "1024x1024",
-					},
-					{
-						src: path.resolve("src/assets/maskable-icon.png"),
-						size: "1024x1024",
-						purpose: "maskable",
 					},
 				],
 			}),
