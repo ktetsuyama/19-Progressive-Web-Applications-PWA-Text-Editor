@@ -23,20 +23,23 @@ module.exports = () => {
 			new MiniCssExtractPlugin(),
 			new InjectManifest({
 				swSrc: "./src-sw.js",
-				swDest: "service-worker.js",
+				swDest: "src-sw.js",
 			}),
 			new WebpackPwaManifest({
+				start_url: "./",
+				publicPath: "./",
 				name: "Progressive Web Applications (PWA): Text Editor",
 				short_name: "PWATextEditor",
-				start_url: "./",
 				description: "A PWA text editor",
 				background_color: "#ffffff",
 				orientation: "portrait",
 				display: "standalone",
 				icons: [
 					{
-						src: path.resolve("./src/images/logo.png"),
+						src: "./src/images/logo.png",
 						sizes: [96, 128, 192, 256, 384, 512],
+						destination: path.join("assets", "icons"),
+						orientation: "omit",
 					},
 				],
 			}),
@@ -48,10 +51,10 @@ module.exports = () => {
 					test: /\.css$/i,
 					use: [MiniCssExtractPlugin.loader, "css-loader"],
 				},
-				{
-					test: /\.(png|svg|jpg|jpeg|gif)$/i,
-					type: "asset/resource",
-				},
+				// {
+				// 	test: /\.(png|svg|jpg|jpeg|gif)$/i,
+				// 	type: "asset/resource",
+				// },
 				{
 					test: /\.m?js$/,
 					exclude: /(node_modules|bower_components)/,
