@@ -28,11 +28,14 @@ module.exports = () => {
 			new WebpackPwaManifest({
 				name: "Progressive Web Applications (PWA): Text Editor",
 				short_name: "PWATextEditor",
+				start_url: "./",
 				description: "A PWA text editor",
 				background_color: "#ffffff",
+				orientation: "portrait",
+				display: "standalone",
 				icons: [
 					{
-						src: path.resolve("src/images/logo.png"),
+						src: path.resolve("./src/images/logo.png"),
 						sizes: [96, 128, 192, 256, 384, 512],
 					},
 				],
