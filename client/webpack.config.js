@@ -23,7 +23,7 @@ module.exports = () => {
 			new MiniCssExtractPlugin(),
 			new InjectManifest({
 				swSrc: "./src-sw.js",
-				swDest: "src-sw.js",
+				swDest: "./sw.js",
 			}),
 			new WebpackPwaManifest({
 				start_url: "./",
@@ -34,12 +34,12 @@ module.exports = () => {
 				background_color: "#ffffff",
 				orientation: "portrait",
 				display: "standalone",
+				fingerprints: false,
 				icons: [
 					{
 						src: "./src/images/logo.png",
 						sizes: [96, 128, 192, 256, 384, 512],
 						destination: path.join("assets", "icons"),
-						orientation: "omit",
 					},
 				],
 			}),
@@ -51,10 +51,6 @@ module.exports = () => {
 					test: /\.css$/i,
 					use: [MiniCssExtractPlugin.loader, "css-loader"],
 				},
-				// {
-				// 	test: /\.(png|svg|jpg|jpeg|gif)$/i,
-				// 	type: "asset/resource",
-				// },
 				{
 					test: /\.m?js$/,
 					exclude: /(node_modules|bower_components)/,
