@@ -29,7 +29,7 @@ Lastly, when the developer clicks on the Install button, application is download
 ## Solution
 
 Here is link to the deployed application on Render:
-[Link to deployed app](https://youtu.be/HrKwLs98NVc)
+[Link to deployed app](https://one9-progressive-web-applications-pwa-fkpw.onrender.com)
 
 ## Contributors
 
