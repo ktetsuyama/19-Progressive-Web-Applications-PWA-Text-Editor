@@ -6,7 +6,7 @@ window.addEventListener("beforeinstallprompt", (event) => {
 	event.preventDefault();
 	butInstall.style.visibility = "visible"; // Fixed variable name
 	butInstall.textContent = "Install"; // Reset button text
-	textHeader.textContent = "Click the button to install!";
+	butInstall.title = "Click the button to install!";
 
 	// A click event handler on the `butInstall` element
 	butInstall.addEventListener("click", async () => {
