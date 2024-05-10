@@ -31,6 +31,9 @@ Lastly, when the developer clicks on the Install button, application is download
 Here is link to the deployed application on Render:
 [Link to deployed app](https://one9-progressive-web-applications-pwa-fkpw.onrender.com)
 
+and here is a screenshot:
+![screenshot](./images/screenshot.png)
+
 ## Contributors
 
 I worked with George Schultz to complete this application. I also used chatgpt and Github copilot to troubleshoot bugs.
